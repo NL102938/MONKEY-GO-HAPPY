@@ -73,6 +73,8 @@ function draw() {
   if(obstacleGroup . isTouching(player)) {
     gameState = END;
     player.visible = 0;
+    FoodGroup.visible = 0;
+    obstacleGroup.visible = 0;
   }
   
 
@@ -125,7 +127,7 @@ function spawnFood(){
 
 function spawnObstacle (){
   if(frameCount % 80 === 0){
-    var obstacle = createSprite(850,325,20,20);
+    var obstacle = createSprite(1000,325,20,20);
     obstacle.addImage(obstacleImage);
     obstacle.scale = 0.1;
     obstacle.velocityX =-4;
